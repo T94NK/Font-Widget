@@ -1,0 +1,86 @@
+@import '~/App.scss';
+
+$width-circle: 10px;
+$width-square: 90px;
+
+.font {
+  @extend .flexCenter;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  border: 1px solid white;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
+  &:last-child() {
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: 450px) {
+    flex-direction: column;
+  }
+
+  .wrapperSquare {
+    position: relative;
+    border: 2px solid black;
+    padding: 3px;
+    border-radius: 10px;
+
+    .square {
+      display: flex;
+      align-items: flex-end;
+      border-radius: 10px;
+      @include sizeFigure($width-square);
+
+      .text, .blindText {
+        opacity: 0.5;
+        color: white;
+      }
+
+      .text {
+        font-size: 25px;
+        font-weight: bold;
+        margin: 0 0 5px 10px;
+      }
+
+      .blindText {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .label {
+    @extend .flexCenter;
+    list-style: disc;
+    margin-left: 20px;
+    font-size: 20px;
+    &::before {
+      content: '';
+      border-radius: $width-circle;
+      margin-right: $width-circle;
+      @include sizeFigure($width-circle, #95A1B2);
+
+      @media screen and (max-width: 450px) {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 450px) {
+      list-style: none;
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+} 
+
+.activeFont {
+  opacity: 0.5;
+}
+
+.selectedFont {
+  outline: none;
+  border-color: $main-color;
+}

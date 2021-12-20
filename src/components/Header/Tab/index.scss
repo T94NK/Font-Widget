@@ -1,0 +1,28 @@
+@import '~/App.scss';
+
+.tabs {
+  @extend .flexCenter;
+
+  .tab {
+    margin-left: 20px;
+    text-transform: uppercase;
+    color: #CDD6E6;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 13px;
+    border: 1px solid white;
+    border-radius: 3px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .active {
+    color: $main-color;
+  }
+
+  .activeTab {
+    outline: none;
+    border-color: $main-color;
+  }
+}

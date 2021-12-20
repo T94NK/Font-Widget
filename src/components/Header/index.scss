@@ -1,0 +1,24 @@
+@import '~/App.scss';
+
+.header {
+  @extend .flexCenter;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 0 15px;
+  @media screen and (max-width: 580px) {
+    flex-direction: column;
+  }
+
+  .skeleton {
+    width: 200px !important;
+  }
+
+  .title {
+    color: #212A31;
+    font-size: 25px;
+    text-align: center;
+    @media screen and (max-width: 580px) {
+      margin-bottom: 15px;
+    }
+  }
+}
